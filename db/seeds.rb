@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+(1..100).each do |number|
+  Word.create(content: 'test content ' + number.to_s, description: 'test description ' + number.to_s)
+end
