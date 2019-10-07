@@ -2,7 +2,7 @@
 
 <ul>
   <% @words.each do |word| %>
-    <li><%= link_to word.id, word %> : <%= word.content %></li>
+    <li><%= link_to word.id, word %> : <%= word.content %> &gt; <%= word.description %></li>
   <% end %>
 </ul>
 

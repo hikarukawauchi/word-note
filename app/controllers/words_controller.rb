@@ -52,6 +52,6 @@ class WordsController < ApplicationController
 
   # Strong Parameter
   def word_params
-    params.require(:word).permit(:content)
+    params.require(:word).permit(:content, :description)
   end
 end

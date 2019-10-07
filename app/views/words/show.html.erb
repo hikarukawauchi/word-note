@@ -1,6 +1,7 @@
 <h1>id: <%= @word.id %> の単語ページ</h1>
 
 <p><%= @word.content %></p>
+<p><%= @word.description %></p>
 
 <%= link_to '一覧に戻る', words_path %>
 <%= link_to 'この単語を編集する', edit_word_path(@word) %>
