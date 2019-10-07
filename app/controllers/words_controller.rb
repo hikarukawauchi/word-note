@@ -1,10 +1,11 @@
 class WordsController < ApplicationController
+  before_action :set_word, only: [:show, :edit, :update, :destroy]
+  
   def index
     @words = Word.all
   end
 
   def show
-    @word = Word.find(params[:id])
   end
 
   def new
@@ -24,11 +25,9 @@ class WordsController < ApplicationController
   end
 
   def edit
-    @word = Word.find(params[:id])
   end
 
   def update
-    @word = Word.find(params[:id])
 
     if @word.update(word_params)
       flash[:success] = '単語は正常に更新されました'
@@ -40,7 +39,6 @@ class WordsController < ApplicationController
   end
 
   def destroy
-    @word = Word.find(params[:id])
     @word.destroy
 
     flash[:success] = 'Word は正常に削除されました'
@@ -48,6 +46,10 @@ class WordsController < ApplicationController
   end
 
   private
+  
+  def set_word
+    @word = Word.find(params[:id])
+  end
 
   # Strong Parameter
   def word_params
