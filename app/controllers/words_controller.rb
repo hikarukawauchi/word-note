@@ -28,7 +28,6 @@ class WordsController < ApplicationController
   end
 
   def update
-
     if @word.update(word_params)
       flash[:success] = '単語は正常に更新されました'
       redirect_to @word
