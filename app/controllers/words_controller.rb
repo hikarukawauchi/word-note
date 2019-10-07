@@ -9,7 +9,7 @@ class WordsController < ApplicationController
   end
 
   def new
-    @word = Word.new(content: 'enter word')
+    @word = Word.new(content: 'enter word', description: 'enter description')
   end
 
   def create
