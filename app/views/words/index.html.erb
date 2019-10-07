@@ -1,10 +1,27 @@
 <h1>単語一覧</h1>
 
-<ul>
-  <% @words.each do |word| %>
-    <li><%= link_to word.id, word %> : <%= word.content %> &gt; <%= word.description %></li>
-  <% end %>
-</ul>
-<%= paginate @words %>
+<% if @words.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>単語</th>
+        <th>説明</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @words.each do |word| %>
+        <tr>
+          <td><%= link_to word.id, word %></td>
+          <td><%= word.content %></td>
+          <td><%= word.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @words %>
+  </div>
+<% end %>
 
-<%= link_to '新規単語の投稿', new_word_path %>
+<%= link_to '新規単語の投稿', new_word_path, class: "btn btn-primary" %>

@@ -1,8 +1,19 @@
 <h1>id: <%= @word.id %> の単語ページ</h1>
 
-<p><%= @word.content %></p>
-<p><%= @word.description %></p>
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @word.id %></td>
+  </tr>
+  <tr>
+    <th>単語</th>
+    <td><%= @word.content %></td>
+  </tr>
+  <tr>
+    <th>説明</th>
+    <td><%= @word.description %></td>
+  </tr>
+</table>
 
-<%= link_to '一覧に戻る', words_path %>
-<%= link_to 'この単語を編集する', edit_word_path(@word) %>
-<%= link_to 'この単語を削除する', @word, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to 'この単語を編集する', edit_word_path(@word), class: 'btn btn-light' %>
+<%= link_to 'この単語を削除する', @word, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-light' %>
